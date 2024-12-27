@@ -1,0 +1,14 @@
+# Use the official OpenJDK image as the base image
+FROM openjdk:17-jdk-alpine
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the source code to the container
+COPY main.java .
+
+# Compile the Java file
+RUN javac main.java
+
+# Define the command to run the application
+CMD ["java", "main"]
